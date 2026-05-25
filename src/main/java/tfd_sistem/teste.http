@@ -1,0 +1,41 @@
+### Criar agendamento para paciente ACAMADO (Sinal 🔴)
+POST http://localhost:8080/agendamentos
+Content-Type: application/json
+
+{
+  "procedimento": "Radioterapia",
+  "dataHora": "2026-03-31T08:00:00",
+  "endereco": "Rua XV, 50",
+  "bairro": "Centro",
+  "paciente": {
+    "nome": "Senhor José",
+    "necessidadeEspecial": "ACAMADO",
+    "telefone": "48988887777",
+    "bairro": "Centro"
+  }
+}
+### 1. Criar agendamento para o Senhor José (Teste de Sinal 🔴)
+POST http://localhost:8080/agendamentos
+Content-Type: application/json
+
+{
+  "procedimento": "Radioterapia",
+  "dataHora": "2026-03-31T08:00:00",
+  "endereco": "Rua XV, 50",
+  "bairro": "Centro",
+  "paciente": {
+    "nome": "Senhor José",
+    "necessidadeEspecial": "ACAMADO",
+    "telefone": "48988887777",
+    "bairro": "Centro"
+  }
+}
+
+### 2. Rodar a Mágica do Dia 4 (Limpeza da Frota)
+POST http://localhost:8080/agendamentos/fechamento-frota
+
+### 3. Ver o Painel da Frota (Lista para o Motorista)
+GET http://localhost:8080/agendamentos/painel-frota?data=2026-03-31
+
+### Confirmar a viagem do Senhor José (ID 5)
+POST http://localhost:8080/agendamentos/5/confirmar
